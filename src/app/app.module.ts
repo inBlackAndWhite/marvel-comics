@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoaderService } from './services/loader.service';
+import { ComicsListComponent } from './comics-list/comics-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ComicsListComponent
   ],
   imports: [
     BrowserModule
