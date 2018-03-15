@@ -1,3 +1,4 @@
-<p>
-  comics-list works!
-</p>
+<ul>
+  <app-comic *ngFor="let comic of loaderService.comics"
+             [comic]="comic"></app-comic>
+</ul>
