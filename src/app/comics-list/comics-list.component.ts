@@ -4,7 +4,7 @@ import { LoaderService } from '../services/loader.service';
 @Component({
   selector: 'app-comics-list',
   templateUrl: './comics-list.component.html',
-  styleUrls: ['./comics-list.component.css']
+  styleUrls: ['./comics-list.component.sass']
 })
 export class ComicsListComponent implements OnInit {
 

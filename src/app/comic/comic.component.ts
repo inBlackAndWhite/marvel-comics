@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-comic',
   templateUrl: './comic.component.html',
-  styleUrls: ['./comic.component.css']
+  styleUrls: ['./comic.component.sass']
 })
 export class ComicComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class ComicComponent implements OnInit {
   @Input() comic: Object;
 
   comicImage(): string {
-    let image = this.comic.images[0];
+    let image = this.comic['images'][0];
 
     if (image) {
       let path = image['path'];
