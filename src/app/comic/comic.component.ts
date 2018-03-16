@@ -21,7 +21,7 @@ export class ComicComponent implements OnInit {
     if (image) {
       let path = image['path'];
       let extension = image['extension'];
-      let size = 'standard_large';
+      let size = 'portrait_incredible';
 
       return `${path}/${size}.${extension}`;
     }
