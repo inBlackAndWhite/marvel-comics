@@ -1,6 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers|Delius|Courgette')
+
 \:host
+  width: 255px
+  height: 365px
   margin-bottom: 30px
+  position: relative
 
 .comic-image
+  width: 100%
+  position: absolute
   border: 20px solid #505659
   box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+.info
+  color: #fff
+  width: 100%
+  bottom: 0
+  padding: 20px 20px 10px;
+  position: absolute
+  background: rgba(0,0,0,.5)
+
+  .info-item
+    width: 100%
+    overflow: hidden
+
+  .title
+    height: 40px
+    font-family: 'Bangers', cursive;
+    font-size: 18px
+    letter-spacing: 1.5px
+    margin-bottom: 10px
+    text-shadow: 2px 2px 2px rgba(152, 3, 3, 1)
+
+  .description
+    height: 75px
+    margin-bottom: 15px
+    font-family: 'Delius', cursive;
+    font-size: 12px
+    text-align: justify
+    overflow: scroll
+
+  .date
+    font-family: 'Courgette', cursive;
+    font-size: 11px
+    text-align: right

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-comic',
@@ -25,5 +26,9 @@ export class ComicComponent implements OnInit {
 
       return `${path}/${size}.${extension}`;
     }
+  }
+
+  formatDate(date: string): moment.Moment {
+    return moment(date.toString()).format('MMMM DD, YYYY');
   }
 }
