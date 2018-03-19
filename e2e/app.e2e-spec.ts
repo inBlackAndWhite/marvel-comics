@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('idexo-challenge App', () => {
+describe('marvel-comics App', () => {
   let page: AppPage;
 
   beforeEach(() => {
