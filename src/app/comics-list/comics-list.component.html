@@ -1,5 +1,4 @@
-<ul class="comics-list">
+<section class="comics-list">
   <app-comic *ngFor="let comic of comics"
-             [comic]="comic"
-             [hidden]="comic['images'][0] === undefined"></app-comic>
-</ul>
+             [comic]="comic"></app-comic>
+</section>
