@@ -22,9 +22,9 @@ export class ComicsListComponent implements OnInit {
                       .then(() => this.addComics());
   }
 
-  addComics(height?: number): void {
+  addComics(): void {
     let scroll = this.comicsList.scrollTop;
-    let listHeight = height || this.comicsList.offsetHeight;
+    let listHeight = this.comicsList.offsetHeight + this.comicHeight;
     let comicsCount = Math.floor((listHeight + scroll) / this.comicHeight);
 
     this.comics = this.loaderService.comics.slice(0, comicsCount);
@@ -32,10 +32,7 @@ export class ComicsListComponent implements OnInit {
 
   @HostListener('scroll', ['$event'])
   onScroll(event): void {
-    let listHeight = this.comicsList.offsetHeight;
-    let newHeight = listHeight + this.comicHeight;
-
-    this.addComics(newHeight);
+    this.addComics();
   }
 
 }
