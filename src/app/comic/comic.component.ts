@@ -28,6 +28,7 @@ export class ComicComponent implements OnInit {
   }
 
   formatDate(date: string): string {
+    date = date.replace(/^-/, '');
     return moment(date.toString()).format('MMMM DD, YYYY');
   }
 }

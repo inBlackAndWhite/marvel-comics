@@ -11,8 +11,6 @@ export class ComicsListComponent implements OnInit {
   constructor(private loaderService: LoaderService,
               private element: ElementRef) { }
 
-  comicsList: Array<Object> = [];
-
   ngOnInit() {
     this.loaderService.loadComics()
                       .then(() => this.placeComics());
@@ -27,7 +25,6 @@ export class ComicsListComponent implements OnInit {
     let comicsCount = Math.floor(listHeight / comicHeight);
 
     this.comics = this.loaderService.comics.slice(0, comicsCount);
-    console.log(this.comics);
   }
 
 }
