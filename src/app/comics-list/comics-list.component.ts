@@ -13,20 +13,20 @@ export class ComicsListComponent implements OnInit {
 
   comicsList: HTMLElement = this.element.nativeElement;
   initialHeight: number = this.comicsList.offsetHeight;
-  comicHeight: number = this.initialHeight * 0.8;
+  insertionRate: number = 1;
+  comicHeight: number = this.initialHeight * this.insertionRate;
   comics: Array<Object> = [];
 
   ngOnInit() {
     this.loaderService.loadComics()
-                      .then(() => this.placeComics());
+                      .then(() => this.addComics());
   }
 
-  placeComics(height?: number): void {
+  addComics(height?: number): void {
     let scroll = this.comicsList.scrollTop;
     let listHeight = height || this.comicsList.offsetHeight;
     let comicsCount = Math.floor((listHeight + scroll) / this.comicHeight);
 
-    comicsCount = comicsCount < 2 ? 2 : comicsCount;
     this.comics = this.loaderService.comics.slice(0, comicsCount);
   }
 
@@ -35,7 +35,7 @@ export class ComicsListComponent implements OnInit {
     let listHeight = this.comicsList.offsetHeight;
     let newHeight = listHeight + this.comicHeight;
 
-    this.placeComics(newHeight);
+    this.addComics(newHeight);
   }
 
 }
