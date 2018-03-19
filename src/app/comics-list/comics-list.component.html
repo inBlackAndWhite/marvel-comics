@@ -1,5 +1,5 @@
 <ul class="comics-list">
-  <app-comic *ngFor="let comic of loaderService.comics"
+  <app-comic *ngFor="let comic of comics"
              [comic]="comic"
              [hidden]="comic['images'][0] === undefined"></app-comic>
 </ul>

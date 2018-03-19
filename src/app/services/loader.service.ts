@@ -11,20 +11,22 @@ export class LoaderService {
 
   comics: Array<Object> = [];
 
-  loadComics(): void {
+  loadComics(): Promise<number> {
     let ts = new Date().getTime().toString();
     let hash = Md5.hashStr(ts + PRIV_KEY + PUBLIC_KEY);
     let authorization = `ts=${ts}&apikey=${PUBLIC_KEY}&hash=${hash}`;
 
     let caracterId = '1009368';
-    let path = `/characters/${caracterId}/comics`;
+    let orderBy = 'orderBy=onsaleDate&'
+    let path = `/characters/${caracterId}/comics?${orderBy}`;
     let url = `https://gateway.marvel.com:443/v1/public`;
 
-    let fullUrl = `${url}${path}?${authorization}`;
-    let comicsList = this.comics;
+    let fullUrl = `${url}${path}${authorization}`;
 
-    fetch(fullUrl).then(readableStm => readableStm.json())
-                  .then(response => comicsList.push(...response.data.results));
+    return fetch(fullUrl).then(readableStm => readableStm.json())
+                         .then(response => {
+                           return this.comics.push(...response.data.results);
+                         });
   }
 
 }

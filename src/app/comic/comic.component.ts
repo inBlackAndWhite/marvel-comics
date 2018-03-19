@@ -11,7 +11,6 @@ export class ComicComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.comic);
   }
 
   @Input() comic: Object;
@@ -28,7 +27,7 @@ export class ComicComponent implements OnInit {
     }
   }
 
-  formatDate(date: string): moment.Moment {
+  formatDate(date: string): string {
     return moment(date.toString()).format('MMMM DD, YYYY');
   }
 }
