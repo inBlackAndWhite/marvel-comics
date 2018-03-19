@@ -11,8 +11,8 @@ export class ComicsListComponent implements OnInit {
   constructor(private loaderService: LoaderService,
               private element: ElementRef) { }
 
-  element: number = this.element.nativeElement;
-  initialHeight: number = this.element.offsetHeight;
+  comicsList: HTMLElement = this.element.nativeElement;
+  initialHeight: number = this.comicsList.offsetHeight;
   comicHeight: number = this.initialHeight * 0.8;
   comics: Array<Object> = [];
 
@@ -22,8 +22,8 @@ export class ComicsListComponent implements OnInit {
   }
 
   placeComics(height?: number): void {
-    let scroll = this.element.scrollTop;
-    let listHeight = height || this.element.offsetHeight;
+    let scroll = this.comicsList.scrollTop;
+    let listHeight = height || this.comicsList.offsetHeight;
     let comicsCount = Math.floor((listHeight + scroll) / this.comicHeight);
 
     comicsCount = comicsCount < 2 ? 2 : comicsCount;
@@ -32,7 +32,7 @@ export class ComicsListComponent implements OnInit {
 
   @HostListener('scroll', ['$event'])
   onScroll(event): void {
-    let listHeight = this.element.offsetHeight;
+    let listHeight = this.comicsList.offsetHeight;
     let newHeight = listHeight + this.comicHeight;
 
     this.placeComics(newHeight);
