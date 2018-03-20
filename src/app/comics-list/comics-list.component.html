@@ -1,4 +1,12 @@
 <section class="comics-list">
-  <app-comic *ngFor="let comic of comics"
-             [comic]="comic"></app-comic>
+  <ng-container *ngIf="showComic">
+    <app-comic *ngFor="let comic of comics"
+               [comic]="comic"></app-comic>
+  </ng-container>
+
+  <ng-container *ngIf="!showComic">
+    <app-comic-detail *ngFor="let comic of comics"
+  [comic]="comic"></app-comic-detail>
+  </ng-container>
+
 </section>

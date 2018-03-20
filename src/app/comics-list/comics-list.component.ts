@@ -16,6 +16,7 @@ export class ComicsListComponent implements OnInit {
   insertionRate: number = 1;
   comicHeight: number = this.initialHeight * this.insertionRate;
   comics: Array<Object> = [];
+  showComic: boolean = true;
 
   ngOnInit() {
     this.loaderService.loadComics()
