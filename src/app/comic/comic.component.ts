@@ -42,7 +42,7 @@ export class ComicComponent implements OnInit {
 
   addImageSrc(): void {
     if (this.comic['images'].length === 0) {
-      this.imageSrc = '../../assets/images/iron-man.png';
+      this.imageSrc = './assets/images/iron-man.png';
       return;
     }
 
