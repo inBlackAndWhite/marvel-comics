@@ -1,5 +1,11 @@
 # Marvel Comics
 
+Developed with Angular 5. Lists Iron Man's comics and its details.
+
+Visit project at: https://inblackandwhite.github.io/marvel-comics
+
+![Marvel Comics App](./marvel-comics.gif)
+
 ## Dependencies:
 
 * [Node.js](http://nodejs.org/) - v8.7.0 npm v5.6.0)
