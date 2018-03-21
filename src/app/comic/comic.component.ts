@@ -48,4 +48,5 @@ export class ComicComponent implements OnInit {
 
     this.imageSrc = this.buildImageSrc();
   }
+
 }

@@ -36,4 +36,12 @@ export class ComicsListComponent implements OnInit {
     this.addComics();
   }
 
+  flipComic(event): void {
+    let comic = event.currentTarget;
+
+    comic.classList.toggle('flip');
+    comic.firstElementChild.classList.toggle('flip');
+    comic.lastElementChild.classList.toggle('hidden');
+  }
+
 }

@@ -1,11 +1,11 @@
 <section class="comics-list">
-  <div class="frame" *ngFor="let comic of comics">
-    <ng-container *ngIf="showComic">
-      <app-comic [comic]="comic"></app-comic>
-    </ng-container>
+  <div *ngFor="let comic of comics"
+       class="frame"
+       (click)="flipComic($event)">
 
-    <ng-container *ngIf="!showComic">
-      <app-comic-detail [comic]="comic"></app-comic-detail>
-    </ng-container>
+    <app-comic [comic]="comic"></app-comic>
+
+    <app-comic-detail class="hidden"
+                      [comic]="comic"></app-comic-detail>
   </div>
 </section>
