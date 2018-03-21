@@ -13,8 +13,7 @@ export class ComicsListComponent implements OnInit {
 
   comicsList: HTMLElement = this.element.nativeElement;
   initialHeight: number = this.comicsList.offsetHeight;
-  insertionRate: number = 1;
-  comicHeight: number = this.initialHeight * this.insertionRate;
+  comicHeight: number = 362.5;
   comics: Array<Object> = [];
   showComic: boolean = true;
 
