@@ -1,9 +1,19 @@
 \:host
-  color: #fff
+  height: 100%
   position: absolute
+  color: #fff
   opacity: 1
   transform: rotate3d(0, 1, 0, 180deg)
   transition: opacity 1s
 
   &.hidden
     opacity: 0
+
+.details-list
+  height: calc(100% - 20px);
+  padding: 20px 10px
+  list-style: none
+  overflow-y: scroll
+
+  .item
+    margin-bottom: 10px
